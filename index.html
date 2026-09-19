@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>دعوت عقد حمید و مریم</title>
+<title>دعوت‌نامه دورهمی حمید و مریم</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gulzar&family=Vazirmatn:wght@300;400;600;800&display=swap">
 <style>
@@ -331,7 +331,7 @@
 <canvas id="fx"></canvas>
 
 <section class="stage" id="stage" lang="fa">
-  <div class="stage-eyebrow">جشن عقد حمید و مریم</div>
+  <div class="stage-eyebrow">دورهمی حمید و مریم</div>
 
   <div class="floaty">
   <div class="halo"></div>
@@ -437,9 +437,9 @@
     </div>
 
     <p class="intro rv" style="--i:6">
-      به میمنت و مبارکی، جشن عقدمان را برگزار می‌کنیم<br>
+      به میمنت و مبارکی، دورهمی صمیمانه‌ای ترتیب داده‌ایم<br>
       و از شما عزیزان دعوت می‌کنیم<br>
-      <strong>در این روز خجسته، در کنارمان باشید.</strong>
+      <strong>در این روز خوش، در کنارمان باشید.</strong>
     </p>
 
     <div class="date rv" style="--i:6">
@@ -467,7 +467,7 @@
     </div>
 
     <div class="count rv" style="--i:8">
-      <div class="lbl">تا روز جشن</div>
+      <div class="lbl">تا روز دورهمی</div>
       <div class="tiles" id="tiles">
         <div class="tile"><b id="c-d">۰</b><span>روز</span></div>
         <div class="tile"><b id="c-h">۰</b><span>ساعت</span></div>
@@ -513,7 +513,7 @@
   /* ---- calendar link ---- */
   const cal = document.getElementById('cal');
   cal.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
-    + '&text=' + encodeURIComponent('جشن عقد حمید و مریم')
+    + '&text=' + encodeURIComponent('دورهمی حمید و مریم')
     + '&dates=20260924T090000Z/20260924T130000Z'
     + '&location=' + encodeURIComponent('تالار باغ گیلاس، شهریار، چهارراه شباهنگ، بلوار امیرکبیر')
     + '&details=' + encodeURIComponent('مسیریابی: https://nshn.ir/rbQtl2QxCWn6');
@@ -524,7 +524,7 @@
     let diff = EVENT - Date.now();
     if (diff <= 0){
       tiles.hidden = true; done.hidden = false;
-      done.textContent = diff > -6*3600e3 ? 'امروز روز جشن است؛ چشم‌به‌راه شماییم' : 'با آرزوی خوشبختی برای حمید و مریم';
+      done.textContent = diff > -6*3600e3 ? 'امروز روز دورهمی است؛ چشم‌به‌راه شماییم' : 'با آرزوی خوشبختی برای حمید و مریم';
       return;
     }
     const d = Math.floor(diff/864e5); diff -= d*864e5;
