@@ -460,7 +460,7 @@
         <small>محل برگزاری</small>
         شهریار، چهارراه شباهنگ، بلوار امیرکبیر<br><b>تالار باغ گیلاس</b>
       </div>
-      <a class="btn" href="https://neshan.org/maps/places/sbQty6WxCW0i" target="_blank" rel="noopener">
+      <a class="btn" id="mapbtn" href="https://neshan.org/maps/places/sbQty6WxCW0i" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7.1 7-12a7 7 0 1 0-14 0c0 4.9 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>
         مسیریابی با نشان
       </a>
@@ -498,6 +498,17 @@
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fa = n => String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
   let opened = false, mode = 'dust';
+
+  /* ---- map: open the Neshan app when installed, otherwise the web page ---- */
+  const NESHAN_WEB = 'https://neshan.org/maps/places/sbQty6WxCW0i';
+  const NESHAN_PKG = 'org.rajman.neshan.traffic.tehran.navigator';
+  document.getElementById('mapbtn').addEventListener('click', e => {
+    if (!/android/i.test(navigator.userAgent)) return; // iOS: universal link opens the app itself
+    e.preventDefault();
+    location.href = 'intent://' + NESHAN_WEB.replace(/^https:\/\//, '')
+      + '#Intent;scheme=https;package=' + NESHAN_PKG
+      + ';S.browser_fallback_url=' + encodeURIComponent(NESHAN_WEB) + ';end';
+  });
 
   /* ---- calendar link ---- */
   const cal = document.getElementById('cal');
